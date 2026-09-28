@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.seccion-demo {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- COMPONENTE 1: DROPDOWN --- */
+.nav-dropdown {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+.arrow {
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    list-style: none;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.menu-item.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px;
+    color: #555;
+    text-decoration: none;
+}
+
+.dropdown li a:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* --- COMPONENTE 2: CARRUSEL --- */
+.carrusel-contenedor {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.carrusel-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carrusel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    gap: 10px;
+}
+
+.carrusel-track img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Efecto Hover */
+.carrusel-track img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.btn-carrusel {
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 1rem;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-carrusel:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+.prev { margin-right: 10px; }
+.next { margin-left: 10px; }
+
+/* --- PANEL DE INFORMACIÓN (Popup) --- */
+.panel-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.panel-info.oculto {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.panel-contenido {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.panel-info.oculto .panel-contenido {
+    transform: translateY(-20px);
+}
+
+.panel-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+}
+
+.panel-cerrar:hover {
+    color: #000;
+}
+
+.panel-contenido h3 {
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.panel-contenido p {
+    color: #555;
+    line-height: 1.5;
+    font-size: 1rem;
+}

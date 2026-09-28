@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librería de Componentes Visuales</title>
+    <link rel="stylesheet" href="css/componente.css">
+</head>
+<body>
+
+    <header>
+        <h1>Libreria de Componentes</h1>
+        <p>Menu Dropdown | Carrusel de fotos | Hoover Efect | Panel de Informacion</p>
+    </header>
+
+    <!-- COMPONENTE 1: MENÚ DROPDOWN -->
+<section class="seccion-demo">
+    <h2>1. Menú Dropdown Musical</h2>
+    <nav class="nav-dropdown">
+        <ul class="menu">
+            <!-- Apartado 1: Biblioteca -->
+            <li class="menu-item has-dropdown">
+                <a href="#" class="menu-link">Biblioteca <span class="arrow">▼</span></a>
+                <ul class="dropdown">
+                    <li><a href="#">Mis Álbumes</a></li>
+                    <li><a href="#">Favoritos</a></li>
+                    <li><a href="#">Listas de Reproducción</a></li>
+                </ul>
+            </li>
+            
+            <!-- Apartado 2: Artistas -->
+            <li class="menu-item"><a href="#" class="menu-link">Artistas</a></li>
+            
+            <!-- Apartado 3: Explorar -->
+            <li class="menu-item has-dropdown">
+                <a href="#" class="menu-link">Explorar <span class="arrow">▼</span></a>
+                <ul class="dropdown">
+                    <li><a href="#">Géneros</a></li>
+                    <li><a href="#">Décadas</a></li>
+                    <li><a href="#">Nuevos Lanzamientos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</section>
+
+    <!-- COMPONENTE 2: CARRUSEL CON PANEL DE INFORMACIÓN y EFECTO HOOVER -->
+    <section class="seccion-demo">
+        <h2>2. Carrusel con Panel de Información Y Efecto Hoover</h2>
+        
+        <!-- el atributo data-visible indica cuantas imagenes se mostraran a la vez en el carrusel de fotos -->
+        <div class="carrusel-contenedor" id="miCarrusel" data-visible="3">
+            <button class="btn-carrusel prev">❮</button>
+            <div class="carrusel-viewport">
+                <div class="carrusel-track">
+                    <!-- 
+                        El usuario añade data-info con el texto que quiera mostrar.
+                        Al hacer clic en la imagen, aparecerá este texto en el panel.
+                    -->
+                    <img src="img/shirobon.png" 
+                         alt="Artista británico de música electrónica y chiptune" 
+                         data-info="Su estilo se caracteriza por fusionar sonidos de synthwave con influencias de distintas épocas,
+                         creando canciones que suenan como si pertenecieran a una década que nunca existió. Es conocido dentro de la escena
+                         del chiptune y el electro, y ha publicado gran cantidad de material a través de plataformas independientes.">
+                    
+                    <img src="img/deadmau5.png" 
+                         alt="Uno de los productores de música electrónica más respetados del mundo" 
+                         data-info="El canadiense es famoso por su icónico casco de ratón, que se ha convertido en un símbolo de la cultura EDM. 
+                         Ha sido nominado múltiples veces al Grammy, ha colaborado con artistas de la talla de Foo Fighters y Kaskade, y es el
+                         fundador del sello discográfico mau5trap, conocido por impulsar a nuevos talentos de la escena electrónica.">
+                    
+                    <img src="img/daft punk.png" 
+                         alt="El legendario dúo francés de música electrónica que revolucionó el género" 
+                         data-info="Formado por Thomas Bangalter y Guy-Manuel de Homem-Christo, se caracterizaron por ocultar sus rostros tras 
+                         cascos de robot, creando un aura de misterio. A lo largo de 28 años, fusionaron el house, el funk y el disco, vendiendo 
+                         más de 12 millones de discos y ganando premios Grammy, incluyendo Álbum del Año por Random Access Memories. 
+                         Se separaron en 2021.">
+                    
+                    <img src="img/waterflame.png" 
+                         alt="Compositor y diseñador de sonido noruego autodidacta" 
+                         data-info="Es una figura fundamental en la escena de los videojuegos independientes, especialmente conocido por sus 
+                         aportes a títulos como Castle Crashers, CastleStorm y la saga Geometry Dash. Su música se distingue por combinar 
+                         orquestación con electrónica, y muchos de sus temas, como Glorious Morning, son clásicos de internet.">
+                    
+                    <img src="img/meganeko.png" 
+                         alt="Productor sueco de música electrónica con una fuerte presencia en la comunidad de juegos de ritmo" 
+                         data-info="Su estilo se caracteriza por composiciones intrincadas y de alta velocidad, con arreglos polirrítmicos 
+                         densos que equilibran la complejidad formal con la energía necesaria para la pista de baile. Ha encontrado un 
+                         público muy fiel dentro del circuito de los rhythm games, donde su música es valorada por su precisión y demanda 
+                         técnica.">
+                </div>
+            </div>
+            <button class="btn-carrusel next">❯</button>
+        </div>
+    </section>
+
+    <!-- El Panel de Información (oculto por defecto, se muestra con JS) -->
+    <div id="panelInfo" class="panel-info oculto">
+        <div class="panel-contenido">
+            <span class="panel-cerrar" id="btnCerrarPanel">&times;</span>
+            <h3 id="panelTitulo">Información</h3>
+            <p id="panelTexto">Aquí va el texto.</p>
+        </div>
+    </div>
+
+    <script src="js/componente.js"></script>
+</body>
+</html>
